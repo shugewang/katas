@@ -11,6 +11,20 @@
 
 // The string has a length greater or equal to one and contains only letters from ato z.
 
-fun printerError(s: String): String {
+import java.util.regex.Pattern
+//fun printerError(s: String): String {
+//    val matcher = Pattern.compile("[^a-m]").matcher(s)
+//    var counter = 0
+//
+//    while (matcher.find()) {
+//        counter++
+//    }
+//
+//    return "${(counter.toString())}/${s.length}"
+//}
 
+fun printerError(s: String) = "${s.count { it !in 'a'..'m' }}/${s.length}"
+
+fun main() {
+    printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
 }
